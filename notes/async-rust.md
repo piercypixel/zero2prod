@@ -27,3 +27,9 @@ There is no configuration syntax to tell the Rust compiler that one of your depe
 So `main` cannot be an async function, as there is no async runtime and no caller to `poll` the future returned by an async main function at the time the main function is executed.
 
 The `#[tokio::main]` macro from the `tokio` crate allows us to write an async main function that will be executed by the `tokio` runtime.
+
+The `#[tokio::test]` macro from the `tokio` crate allows us to write async test functions that will be executed by the `tokio` runtime when we run `cargo test`. A new runtime is spinned up at the beginning of each test case and is shut down at the end of the test case.
+
+## tokio::spawn
+
+What happens to async tasks executed with tokyo when a tokyo runtime is shut down? - The tasks are killed

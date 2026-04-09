@@ -30,3 +30,9 @@ rustup toolchain install nightly \
 ```
 
 **check if this is still the case** successfully ran `cargo expand` with cargo-expand 1.0.121 and stable rustc 1.92.0 (ded5c06cf 2025-12-08)
+
+Expanding a specific test file
+
+```bash
+cargo expand --test health_check
+```
